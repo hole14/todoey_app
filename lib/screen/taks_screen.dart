@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:todoey_app/widgets/taks_list.dart';
 import 'add_task_screen.dart';
+import 'package:todoey_app/models/task.dart';
+import 'package:provider/provider.dart';
+import 'package:todoey_app/models/task_data.dart';
 
 class TaksScreen extends StatelessWidget {
 
@@ -21,7 +24,9 @@ class TaksScreen extends StatelessWidget {
                   bottom:
                     MediaQuery.of(context).viewInsets.bottom
                 ),
-                child: AddTaskScreen(),
+                child: AddTaskScreen(
+
+                ),
               ),
             ),
           );
@@ -65,7 +70,7 @@ class TaksScreen extends StatelessWidget {
                 ),
               ),
               Text(
-                '12 Taks',
+                '${Provider.of<TaskData>(context).taskCount} Taks',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16.0,
